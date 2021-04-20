@@ -4,10 +4,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #fe4775;
+  --secondary-color: #161060;
+  --primary-text-color: #111111;
+  --secondary-text-color: #fff;
+  --headline-color: #393939;
+}
+
 html {
   font-size: 16px;
 }
 
 body {
-  background: black;
+  background: var(--primary-color);
 }
