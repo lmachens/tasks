@@ -86,3 +86,7 @@ body {
 .radio-group__input:checked + span {
   color: var(--primary-color);
 }
+
+.radio-group__input:focus-visible + span {
+  outline: thin solid;
+}
