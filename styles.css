@@ -12,6 +12,7 @@
   --primary-text-color: #111111;
   --secondary-text-color: #fff;
   --headline-color: #393939;
+  --inactive-text-color: #3939399d;
 
   --primary-font-family: "Montserrat", sans-serif;
   --secondary-font-family: "Roboto", sans-serif;
@@ -34,8 +35,7 @@ body {
   display: grid;
   align-content: center;
   row-gap: 3em;
-  padding: 1.5em;
-  padding-bottom: 6.2em;
+  padding: 1.5em 0 6.2em 1.5em;
 }
 
 /* ELEMENT */
@@ -64,7 +64,9 @@ body {
 .form__input {
   font-size: 2.8em;
   border: none;
-  border-bottom: 1px solid var(--headline-color);
+  border-bottom: 2px solid var(--headline-color);
+  width: 100%;
+  padding-right: 0.5em;
 }
 
 .form__input::placeholder {
@@ -75,18 +77,23 @@ body {
 .radio-group {
   display: flex;
   justify-content: space-around;
+  margin-right: 1.5em;
 }
 
 /* ELEMENT */
+.radio-group__title {
+  color: var(--inactive-text-color);
+}
+
 .radio-group__input {
   position: absolute;
   opacity: 0;
 }
 
-.radio-group__input:checked + span {
+.radio-group__input:checked + .radio-group__title {
   color: var(--primary-color);
 }
 
-.radio-group__input:focus-visible + span {
+.radio-group__input:focus-visible + .radio-group__title {
   outline: thin solid;
 }
