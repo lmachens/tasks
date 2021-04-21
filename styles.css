@@ -33,9 +33,19 @@ body {
   height: 100%;
   display: grid;
   align-content: center;
-  row-gap: 2em;
+  row-gap: 3em;
   padding: 1.5em;
   padding-bottom: 6.2em;
+}
+
+/* ELEMENT */
+.form__title {
+  font-size: 3em;
+  font-weight: normal;
+}
+
+.form__subtitle {
+  text-transform: uppercase;
 }
 
 /* ELEMENT */
@@ -48,6 +58,17 @@ body {
   border: none;
   font-size: 1.4em;
   padding: 1.3em 2em;
+}
+
+/* ELEMENT */
+.form__input {
+  font-size: 2.8em;
+  border: none;
+  border-bottom: 1px solid var(--headline-color);
+}
+
+.form__input::placeholder {
+  opacity: 0.4;
 }
 
 /* BLOCK */
