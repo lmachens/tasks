@@ -22,7 +22,46 @@ html {
 }
 
 body {
-  background: var(--primary-color);
-  color: var(--secondary-text-color);
   font-family: var(--secondary-font-family);
+  height: 100vh;
+  margin: 0;
+}
+
+/* BLOCK */
+.form {
+  position: relative;
+  height: 100%;
+  display: grid;
+  align-content: center;
+  row-gap: 2em;
+  padding: 1.5em;
+  padding-bottom: 6.2em;
+}
+
+/* ELEMENT */
+.form__submit {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--secondary-text-color);
+  border: none;
+  font-size: 1.4em;
+  padding: 1.3em 2em;
+}
+
+/* BLOCK */
+.radio-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* ELEMENT */
+.radio-group__input {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio-group__input:checked + span {
+  color: var(--primary-color);
 }

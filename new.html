@@ -8,20 +8,45 @@
     <title>New task</title>
   </head>
   <body>
-    <form action="">
+    <form action="" class="form">
       <h2>Add new</h2>
       <input type="text" placeholder="Enter Task" />
 
       <h3>When</h3>
-      <label>Today<input type="radio" name="date" value="today" /></label>
-      <label
-        >Tommorow<input type="radio" name="date" value="tommorow" />
-      </label>
-      <label
-        >Select Date<input type="radio" name="date" value="selectDate" />
-      </label>
 
-      <input type="submit" value="Add Task" />
+      <!-- START Radio block / component -->
+      <div class="radio-group">
+        <label>
+          <input
+            class="radio-group__input"
+            type="radio"
+            name="date"
+            value="today"
+          />
+          <span>Today</span>
+        </label>
+        <label>
+          <input
+            class="radio-group__input radio-group__input_active"
+            type="radio"
+            name="date"
+            value="tommorow"
+          />
+          <span>Tommorow</span>
+        </label>
+        <label>
+          <input
+            class="radio-group__input"
+            type="radio"
+            name="date"
+            value="selectDate"
+          />
+          <span>Select Date</span>
+        </label>
+      </div>
+      <!-- END Radio block / component -->
+
+      <input type="submit" value="Add Task" class="form__submit" />
     </form>
   </body>
 </html>
