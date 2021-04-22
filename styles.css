@@ -132,7 +132,6 @@ body {
   padding: 2em 3em;
   background: var(--primary-color);
   display: grid;
-  place-items: center;
   border-top-left-radius: 0.5em;
 }
 
