@@ -1,10 +1,13 @@
-// Variable
-const submitButton = document.querySelector(".form__submit");
+const formElement = document.querySelector(".form");
 
-// Events
-submitButton.addEventListener("click", showTask);
+formElement.onsubmit = function (event) {
+  // Prevent the default form submit behaivor (sending data to a server an reloading page)
+  event.preventDefault();
 
-// Functions
-function showTask() {
-  alert("Show task");
-}
+  const textInputElement = document.querySelector(".form__input");
+  const checkedDateInput = document.querySelector(
+    ".radio-group__input:checked"
+  );
+
+  console.log(textInputElement.value, checkedDateInput.value);
+};
