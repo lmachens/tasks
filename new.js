@@ -9,5 +9,15 @@ formElement.onsubmit = function (event) {
     ".radio-group__input:checked"
   );
 
+  if (!textInputElement.value) {
+    alert("Text Input is empty!");
+    return;
+  }
+
+  if (!checkedDateInput) {
+    alert("Radio Button not checked!");
+    return;
+  }
+
   console.log(textInputElement.value, checkedDateInput.value);
 };
