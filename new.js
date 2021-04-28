@@ -24,5 +24,6 @@ formElement.onsubmit = function (event) {
     date: checkedDateInput.value,
   };
 
-  console.log(task);
+  const taskJSON = JSON.stringify(task);
+  localStorage.setItem("task", taskJSON);
 };
