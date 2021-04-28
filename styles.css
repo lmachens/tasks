@@ -97,3 +97,74 @@ body {
 .radio-group__input:focus-visible + .radio-group__title {
   outline: thin solid;
 }
+
+.layout {
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+.layout__burger-menu {
+  grid-column: 1/4;
+  justify-self: start;
+  margin: 3em;
+  margin-left: 1em;
+  background: none;
+  border: none;
+}
+
+.layout__header {
+  grid-column: 1/3;
+  font-size: 3em;
+  margin: 0;
+  margin-left: 0.3em;
+}
+.layout__notifications {
+  margin-right: 1em;
+  justify-self: end;
+  align-self: center;
+  background: none;
+  border: none;
+}
+.layout__new-task {
+  grid-column: 3/4;
+  padding: 2em 3em;
+  background: var(--primary-color);
+  display: grid;
+  border-top-left-radius: 0.5em;
+}
+
+.date-selector-group {
+  grid-column: 1/2;
+  grid-row: span 2;
+  writing-mode: vertical-rl;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4em 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transform: rotate(180deg);
+}
+
+.tasks-group {
+  grid-column: 2/4;
+  display: grid;
+  padding: 3em 1em;
+  font-size: 1.3em;
+  align-content: start;
+  row-gap: 3em;
+  overflow: auto;
+  height: 1fr;
+}
+
+.tasks-group__input {
+  position: absolute;
+  opacity: 0;
+}
+
+.tasks-group__input:checked + .tasks-group__task {
+  text-decoration: line-through;
+  text-decoration-color: var(--primary-color);
+}
