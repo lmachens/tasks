@@ -114,6 +114,44 @@ body {
   border: none;
 }
 
+.layout__burger-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.menu {
+  left: -100%;
+  padding: 2em;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: var(--secondary-color);
+  z-index: 1;
+  color: var(--secondary-text-color);
+  transition: left 0.3s;
+}
+.menu label {
+  position: absolute;
+  right: 2em;
+  top: 2em;
+}
+
+.layout__burger-checkbox:checked ~ .menu {
+  left: 0;
+}
+
+.menu h2 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.menu a {
+  font-size: 2em;
+  text-decoration: none;
+  color: var(--secondary-text-color);
+  margin-bottom: auto;
+}
+
 .layout__header {
   grid-column: 1/3;
   font-size: 3em;

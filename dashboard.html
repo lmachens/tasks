@@ -9,9 +9,11 @@
   </head>
   <body>
     <main class="layout">
-      <button class="layout__burger-menu">
-        <img src="./assets/menu.svg" alt="" />
-      </button>
+      <input id="burger" type="checkbox" class="layout__burger-checkbox" />
+      <label class="layout__burger-menu" for="burger"
+        ><img src="./assets/menu.svg" alt="" />
+      </label>
+
       <h2 class="layout__header">Tasks</h2>
       <button class="layout__notifications">
         <img src="./assets/bell.svg" alt="" />
@@ -65,6 +67,33 @@
       <a class="layout__new-task" href="./new.html"
         ><img src="./assets/new_button.svg" alt=""
       /></a>
+      <nav class="menu">
+        <h2>Task App</h2>
+        <label for="burger"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16.201"
+            height="15.556"
+            viewbox="0 0 16.201 15.556"
+          >
+            <rect
+              width="20"
+              height="2"
+              rx="1"
+              transform="translate(0.322 14.142) rotate(-45)"
+              fill="#fff"
+            />
+            <rect
+              width="20"
+              height="2"
+              rx="1"
+              transform="translate(14.863 15.213) rotate(-138)"
+              fill="#fff"
+            />
+          </svg>
+        </label>
+        <a href="/dahboard.html">Dashboard</a>
+      </nav>
     </main>
   </body>
 </html>
