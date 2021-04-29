@@ -19,6 +19,10 @@ function stringifyJSONToLocalStorage(key, value) {
   localStorage.setItem(key, json);
 }
 
+function goToPage(href) {
+  location.href = href;
+}
+
 formElement.onsubmit = function (event) {
   // Prevent the default form submit behaivor (sending data to a server an reloading page)
   event.preventDefault();
@@ -46,4 +50,6 @@ formElement.onsubmit = function (event) {
   const taskList = parseJSONFromLocalStorage("taskList", []);
   const newTaskList = appendToArray(task, taskList);
   stringifyJSONToLocalStorage("taskList", newTaskList);
+
+  goToPage("/dashboard.html");
 };
