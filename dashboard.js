@@ -1,16 +1,29 @@
-function createTaskElement(taskName) {
+function createTaskElement(task) {
   const label = document.createElement("label");
   const input = document.createElement("input");
   const span = document.createElement("span");
 
   input.type = "checkbox";
   input.className = "tasks-group__input";
+  input.checked = task.completed;
+  input.onchange = function () {
+    completeTask(task.name, input.checked);
+  };
 
   span.className = "tasks-group__task";
-  span.innerText = taskName;
+  span.innerText = task.name;
 
   label.append(input, span);
   return label;
+}
+
+function completeTask(taskName, completed) {
+  const taskList = parseJSONFromLocalStorage("taskList", []);
+  const task = taskList.find(function (task) {
+    return task.name === taskName;
+  });
+  task.completed = completed;
+  stringifyJSONToLocalStorage("taskList", taskList);
 }
 
 function parseJSONFromLocalStorage(key, defaultValue) {
@@ -20,6 +33,11 @@ function parseJSONFromLocalStorage(key, defaultValue) {
   }
   const data = JSON.parse(json);
   return data;
+}
+
+function stringifyJSONToLocalStorage(key, value) {
+  const json = JSON.stringify(value);
+  localStorage.setItem(key, json);
 }
 
 const radioGroupInputList = document.querySelectorAll(".radio-group__input");
@@ -43,7 +61,7 @@ function displayTaskList(date) {
 
   // Create taskElements array consisting of html elemtns base on the amount of objects
   const taskElements = filteredTaskList.map(function (task) {
-    return createTaskElement(task.name);
+    return createTaskElement(task);
   });
 
   // Get parent element of tasks
