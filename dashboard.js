@@ -22,16 +22,39 @@ function parseJSONFromLocalStorage(key, defaultValue) {
   return data;
 }
 
-// Get Array with task Objects from localStorage
-const taskList = parseJSONFromLocalStorage("taskList", []);
+const radioGroupInputList = document.querySelectorAll(".radio-group__input");
 
-// Create taskElements array consisting of html elemtns base on the amount of objects
-const taskElements = taskList.map(function (task) {
-  return createTaskElement(task.name);
+radioGroupInputList.forEach(function (radioGroupInput) {
+  radioGroupInput.onchange = function () {
+    displayTaskList(radioGroupInput.value);
+  };
 });
 
-// Get parent element of tasks
-const tasksGroupElement = document.querySelector(".tasks-group");
+displayTaskList("today");
 
-// Append all elements in taskElement to task group
-tasksGroupElement.append(...taskElements);
+function displayTaskList(date) {
+  // Get Array with task Objects from localStorage
+  const taskList = parseJSONFromLocalStorage("taskList", []);
+
+  // Filter array by date
+  const filteredTaskList = taskList.filter(function (task) {
+    return task.date === date;
+  });
+
+  // Create taskElements array consisting of html elemtns base on the amount of objects
+  const taskElements = filteredTaskList.map(function (task) {
+    return createTaskElement(task.name);
+  });
+
+  // Get parent element of tasks
+  const tasksGroupElement = document.querySelector(".tasks-group");
+
+  removeAllChildren(tasksGroupElement);
+
+  // Append all elements in taskElement to task group
+  tasksGroupElement.append(...taskElements);
+}
+
+function removeAllChildren(tasksGroupElement) {
+  tasksGroupElement.innerHTML = "";
+}
