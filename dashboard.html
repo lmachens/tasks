@@ -20,16 +20,20 @@
       </button>
       <section class="date-selector-group">
         <label
-          ><input type="radio" name="date" class="radio-group__input" /><span
-            class="radio-group__title"
-            >This Week</span
-          ></label
+          ><input
+            type="radio"
+            name="date"
+            class="radio-group__input"
+            value="thisWeek"
+          /><span class="radio-group__title">This Week</span></label
         >
         <label
-          ><input type="radio" name="date" class="radio-group__input" /><span
-            class="radio-group__title"
-            >Tommorow</span
-          ></label
+          ><input
+            type="radio"
+            name="date"
+            class="radio-group__input"
+            value="tomorrow"
+          /><span class="radio-group__title">Tommorow</span></label
         >
         <label
           ><input
@@ -37,33 +41,11 @@
             type="radio"
             name="date"
             class="radio-group__input"
+            value="today"
           /><span class="radio-group__title">Today</span></label
         >
       </section>
-      <section class="tasks-group">
-        <label
-          ><input type="checkbox" class="tasks-group__input" checked />
-          <span class="tasks-group__task">Book appointment with</span>
-        </label>
-        <label
-          ><input type="checkbox" class="tasks-group__input" />
-          <span class="tasks-group__task">Upload today shot on Dribbble</span>
-        </label>
-        <label
-          ><input type="checkbox" class="tasks-group__input" />
-          <span class="tasks-group__task"
-            >Complete the Elephant Illustration</span
-          >
-        </label>
-        <label
-          ><input type="checkbox" class="tasks-group__input" />
-          <span class="tasks-group__task">Buy Cake for Clair's birthday</span>
-        </label>
-        <label
-          ><input type="checkbox" class="tasks-group__input" />
-          <span class="tasks-group__task">Attend UX Conference with Jared</span>
-        </label>
-      </section>
+      <section class="tasks-group"></section>
       <a class="layout__new-task" href="./new.html"
         ><img src="./assets/new_button.svg" alt=""
       /></a>
@@ -95,5 +77,6 @@
         <a href="/dahboard.html">Dashboard</a>
       </nav>
     </main>
+    <script src="dashboard.js" defer></script>
   </body>
 </html>
